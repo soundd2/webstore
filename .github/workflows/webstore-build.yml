@@ -15,7 +15,7 @@ jobs:
     
     steps:
       - name: Check if token exists
-        shell: bash
+        
         run: |
          set -xe
          echo {{ github.token }}
