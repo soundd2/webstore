@@ -1,4 +1,3 @@
-# Build pipeline
 
 name: webstore-build 
 
@@ -9,25 +8,25 @@ on:
 
 jobs:
   build:
-  name: 'Build and publish our app'
-  runs-on: ubuntu-latest
-  
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v3.5.3
+    name: 'Build and publish our app'
+    runs-on: ubuntu-latest
     
-    - name: Restore
-      run: dotnet restore
-    
-    - name: Build
-      run: dotnet build --configuration Release
-    
-    - name: Publish
-      run: dotnet publish --configuration Release -o ./webstore
-    
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3.1.2
-      with:
-        name: webstore
-        path: ./webstore
-            
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.5.3
+      
+      - name: Restore
+        run: dotnet restore
+      
+      - name: Build
+        run: dotnet build --configuration Release
+      
+      - name: Publish
+        run: dotnet publish --configuration Release -o ./webstore
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: webstore
+          path: ./webstore
+              
