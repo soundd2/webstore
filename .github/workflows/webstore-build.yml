@@ -1,4 +1,4 @@
-# build pipeline
+# build piipeline
 name: webstore-build 
 
 on:
