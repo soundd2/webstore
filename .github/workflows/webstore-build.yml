@@ -14,6 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Check if token exists
+        shell: bash
+        run: |
+         set -xe
+         echo {{ github.token }}
+         
       - name: Checkout
         uses: actions/checkout@v3.5.3
       
